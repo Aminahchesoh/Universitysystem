@@ -1,4 +1,3 @@
-
 class User:
     def __init__(self, name, id, phonenum):
         self.name= name
@@ -16,8 +15,8 @@ class Student(User):          #create a class called student and inherit propert
         self.major= major
         User.__init__(self, name, id, phonenum)
         
-        User.show_details(self)
-        print(f"{self.name} got {self.grade}")
+        User.show_details(self) #this is the first call for show_detail() method
+        print(f"{self.name} got {self.grade}") #this print studentName got studentGrade
 
 
 class Lecturer(User):
@@ -37,10 +36,4 @@ class Staff(User):
 
 
 s = Student("Aminah", 642437001, '09878867', "A+", "ugh@ftu.ac.th", "DS")
-s.show_details()
-
-
-
-
-
-
+s.show_details() #this is the second call for show_detail() method

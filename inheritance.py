@@ -36,4 +36,4 @@ class Staff(User):
 
 
 s = Student("Aminah", 642437001, '09878867', "A+", "ugh@ftu.ac.th", "DS")
-s.show_details() #this is the second call for show_detail() method
+#s.show_details() #this is the second call for show_detail() method

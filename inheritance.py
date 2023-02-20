@@ -17,7 +17,7 @@ class Student(User):          #create a class called student and inherit propert
         
         User.show_details(self) #this is the first call for show_detail() method
         print(f"{self.name} got {self.grade}") #this print studentName got studentGrade
-    # add method to view a subject's marks
+    # add method to view a subject's marks (miniProjectMark, finalProjectMark, attendance mark, exersicesDiscussionMark)
 
 
 class Lecturer(User):
@@ -26,13 +26,16 @@ class Lecturer(User):
         self.building= building
         self.salary= salary
         User.__init__(self, name, id, phonenum)
-     # add method to set a students mark
-    def set_student_marks(self, student, subject, new_grade):
-        student.set_marks(subject, new_grade)
-        self.students[student.name] = student.grade
-        print(f"{self.name} has set {student.name}'s marks for {subject} to {student.grade}")
-    def view_student_marks(self, student):
-        print(f"{student.name}'s marks are: {self.students[student.name]}")
+    def set_studentmark (self, miniProjectMark, finalProjectMark, attendancemark,exersicesDiscussionMark):
+        self.studentmark = miniProjectMark
+        self.studentmark = finalProjectMark
+        self.studentmark = attendancemark
+        self.studentmark = exersicesDiscussionMark
+        print(f"{self.name} has set {Student.name}'s marks {Student.}  {Student.grade}")
+
+        
+     # add method to set a students mark (miniProjectMark, finalProjectMark, attendance mark, exersicesDiscussionMark)
+
 
 class Staff(User):
     def __init__(self, name, position, id, building, phonenum, salary):

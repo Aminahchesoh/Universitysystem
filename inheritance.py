@@ -27,7 +27,12 @@ class Lecturer(User):
         self.salary= salary
         User.__init__(self, name, id, phonenum)
      # add method to set a students mark
-
+    def set_student_marks(self, student, subject, new_grade):
+        student.set_marks(subject, new_grade)
+        self.students[student.name] = student.grade
+        print(f"{self.name} has set {student.name}'s marks for {subject} to {student.grade}")
+    def view_student_marks(self, student):
+        print(f"{student.name}'s marks are: {self.students[student.name]}")
 
 class Staff(User):
     def __init__(self, name, position, id, building, phonenum, salary):

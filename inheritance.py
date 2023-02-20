@@ -17,7 +17,7 @@ class Student(User):          #create a class called student and inherit propert
         
         User.show_details(self) #this is the first call for show_detail() method
         print(f"{self.name} got {self.grade}") #this print studentName got studentGrade
-    # add method to view a subject's marks
+    # add method to view a subject's marks (miniProjectMark, finalProjectMark, attendance mark, exersicesDiscussionMark)
 
 
 class Lecturer(User):
@@ -26,7 +26,7 @@ class Lecturer(User):
         self.building= building
         self.salary= salary
         User.__init__(self, name, id, phonenum)
-     # add method to set a students mark
+     # add method to set a students mark (miniProjectMark, finalProjectMark, attendance mark, exersicesDiscussionMark)
 
 
 class Staff(User):

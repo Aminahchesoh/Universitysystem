@@ -35,7 +35,17 @@ class Staff(User):
         self.building= building
         self.salary= salary
         User.__init__(self, name, id, phonenum)
-
+#create course class to link it with Students & Lecturer classes using composition later
+class Course:
+    def __init__(self, cName, cId, cMidtrm, cMiniProject, cFinalProject, cFinalExam, cDiscussion):
+        self.name = cName
+        self.id = cId
+        self.midterm = cMidterm
+        self.miniProject = cMiniProject
+        self.finalProject = cFinalProject
+        self.finalExam = cFinalExam
+        self.discussions = cDiscussuin
+        
 
 s = Student("Aminah", 642437001, '09878867', "A+", "ugh@ftu.ac.th", "DS")
 #s.show_details() #this is the second call for show_detail() method

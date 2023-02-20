@@ -26,7 +26,7 @@ class Lecturer(User):
         self.building= building
         self.salary= salary
         User.__init__(self, name, id, phonenum)
-     # add method to    set a students mark (miniProjectMark, finalProjectMark, attendance mark, exersicesDiscussionMark)
+     # add method to set a students mark (miniProjectMark, finalProjectMark, attendance mark, exersicesDiscussionMark)
 
 
 class Staff(User):

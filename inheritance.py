@@ -27,6 +27,7 @@ class Lecturer(User):
         self.salary= salary
         User.__init__(self, name, id, phonenum)
      # add method to set a students mark
+ 
 
 
 class Staff(User):

@@ -26,15 +26,17 @@ class Lecturer(User):
         self.building= building
         self.salary= salary
         User.__init__(self, name, id, phonenum)
+
+    # add method to set a students mark (miniProjectMark, finalProjectMark, attendance mark, exersicesDiscussionMark)
     def set_studentmark (self, miniProjectMark, finalProjectMark, attendancemark,exersicesDiscussionMark):
         self.studentmark = miniProjectMark
         self.studentmark = finalProjectMark
         self.studentmark = attendancemark
         self.studentmark = exersicesDiscussionMark
-        print(f"{self.name} has set {Student.name}'s marks {Student.}  {Student.grade}")
+        print(f"{self.name} has set {Student.name}'s marks {Student.mi}  {Student.grade}")
 
         
-     # add method to set a students mark (miniProjectMark, finalProjectMark, attendance mark, exersicesDiscussionMark)
+
 
 
 class Staff(User):
@@ -45,14 +47,14 @@ class Staff(User):
         User.__init__(self, name, id, phonenum)
 #create course class to link it with Students & Lecturer classes using composition later
 class Course:
-    def __init__(self, cName, cId, cMidtrm, cMiniProject, cFinalProject, cFinalExam, cDiscussion):
+    def __init__(self, cName, cId, cMidterm, cMiniProject, cFinalProject, cFinalExam, cDiscussion):
         self.name = cName
         self.id = cId
         self.midterm = cMidterm
         self.miniProject = cMiniProject
         self.finalProject = cFinalProject
         self.finalExam = cFinalExam
-        self.discussions = cDiscussuin
+        self.discussions = cDiscussion
         
 
 s = Student("Aminah", 642437001, '09878867', "A+", "ugh@ftu.ac.th", "DS")

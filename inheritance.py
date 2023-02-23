@@ -14,28 +14,26 @@ class Student(User):          #create a class called student and inherit propert
         self.email= email
         self.major= major
         User.__init__(self, name, id, phonenum)
-<<<<<<< HEAD
+        self.marks = {}
 
     def set_studentmark (self, miniProjectMark, finalProjectMark, attendancemark,exersicesDiscussionMark):
         self.studentmark = miniProjectMark
         self.studentmark = finalProjectMark
         self.studentmark = attendancemark
         self.studentmark = exersicesDiscussionMark
-        print(f"{self.name} has set {Student.name}'s marks {Student.}  {Student.grade}")
+        print(f"{self.name} has set {Student.name}")
     
-=======
-        self.marks = {}
+    def add_marks(self, studentmark, marks):
+        self.marks[studentmark] = marks
 
-    def add_marks(self, subject, marks):
-        self.marks[subject] = marks
-
-    def view_marks(self, subject):
-        if subject in self.marks:
-            print(f"{self.name}'s marks for {subject}: {self.marks[subject]}")
+    def view_marks(self, studentmark):
+        if studentmark in self.marks:
+            print(f"{self.name}'s marks for {studentmark}: {self.marks[studentmark]}")
         else:
-            print(f"{self.name} has not received any marks for {subject} yet.")
+            print(f"{self.name} has not received any marks for {studentmark} yet.")
         
->>>>>>> 569eb1fb2b745453d235ec54760bcb3a1c65ab72
+
+
         User.show_details(self) #this is the first call for show_detail() method
         print(f"{self.name} got {self.marks}") #this print studentName got studentGrade
     # add method to view a subject's marks (miniProjectMark, finalProjectMark, attendance mark, exersicesDiscussionMark)

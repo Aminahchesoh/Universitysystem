@@ -13,18 +13,11 @@ class Student(User):          #create a class called student and inherit propert
         self.marks= marks
         self.email= email
         self.major= major
+        self.name= name
         User.__init__(self, name, id, phonenum)
         self.marks = {}
 
-    def set_studentmark (self, miniProjectMark, finalProjectMark, attendancemark,exersicesDiscussionMark):
-        self.studentmark = miniProjectMark
-        self.studentmark = finalProjectMark
-        self.studentmark = attendancemark
-        self.studentmark = exersicesDiscussionMark
-        print(f"{self.name} has set {Student.name}")
     
-    def add_marks(self, studentmark, marks):
-        self.marks[studentmark] = marks
 
     def view_marks(self, studentmark):
         if studentmark in self.marks:
@@ -32,8 +25,8 @@ class Student(User):          #create a class called student and inherit propert
         else:
             print(f"{self.name} has not received any marks for {studentmark} yet.")
         
-        User.show_details(self) #this is the first call for show_detail() method
-        print(f"{self.name} got {self.marks}") #this print studentName got studentGrade
+    def show_detail(self): #this is the first call for show_detail() method
+            print(f"{self.name} got {self.marks}") #this print studentName got studentGrade
     # add method to view a subject's marks (miniProjectMark, finalProjectMark, attendance mark, exersicesDiscussionMark)
 
 
@@ -42,6 +35,7 @@ class Lecturer(User):
         self.posiition= position
         self.building= building
         self.salary= salary
+        self.name= name
         User.__init__(self, name, id, phonenum)
 
     # add method to set a students mark (miniProjectMark, finalProjectMark, attendance mark, exersicesDiscussionMark)
@@ -50,8 +44,9 @@ class Lecturer(User):
         self.studentmark = finalProjectMark
         self.studentmark = attendancemark
         self.studentmark = exersicesDiscussionMark
-        print(f"{self.name} has set {Student.name}'s marks {Student.mi}  {Student.grade}")
 
+    def show_detail(self, student, course):
+        print(f"{student.name} registered {course.name} course, and got {course.midterm}")
         
 
 
@@ -64,20 +59,22 @@ class Staff(User):
         User.__init__(self, name, id, phonenum)
 #create course class to link it with Students & Lecturer classes using composition later
 class Course:
-    def __init__(self, cName, cId, cMidterm, cMiniProject, cFinalProject, cFinalExam, cDiscussion):
-        self.name = cName
-        self.id = cId
-        self.midterm = cMidterm
-        self.miniProject = cMiniProject
-        self.finalProject = cFinalProject
-        self.finalExam = cFinalExam
-        self.discussions = cDiscussion
+    def __init__(self, Name, Id, Midterm):
+        self.name = Name
+        self.id = Id
+        self.midterm = Midterm
+
+    def show_detail(self):
+        print(f"{self.name} has set {self.id} {self.midterm}")
+
         
 
 s = Student("Aminah", 642437001, '09878867', "A+", "ugh@ftu.ac.th", "DS")
+C = Course("OOP","DSA2303-313",100)
+L = Lecturer("Anas","Teacher",123,"Fst",1234,370000)
+C.show_detail()
+L.show_detail(s,C)
 # create an object of exersicesDiscussionMark class
-discussMark = exersicesDiscussionMark("Theory class", 20)
-discussMark.show_details()
 #s.show_details() #this is the second call for show_detail() method
 """ for future use
 # Code to demonstrate Aggregation

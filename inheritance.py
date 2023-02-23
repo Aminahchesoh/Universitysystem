@@ -9,14 +9,21 @@ class User:
         print(f"student phone number is {self.phonenum}")
 
 class Student(User):          #create a class called student and inherit property and method from user class
-    def __init__(self, name, id, phonenum, grade, email, major):
-        self.grade= grade
+    def __init__(self, name, id, phonenum, marks, email, major):
+        self.marks= marks
         self.email= email
         self.major= major
         User.__init__(self, name, id, phonenum)
-        
+
+    def set_studentmark (self, miniProjectMark, finalProjectMark, attendancemark,exersicesDiscussionMark):
+        self.studentmark = miniProjectMark
+        self.studentmark = finalProjectMark
+        self.studentmark = attendancemark
+        self.studentmark = exersicesDiscussionMark
+        print(f"{self.name} has set {Student.name}'s marks {Student.}  {Student.grade}")
+    
         User.show_details(self) #this is the first call for show_detail() method
-        print(f"{self.name} got {self.grade}") #this print studentName got studentGrade
+        print(f"{self.name} got {self.marks}") #this print studentName got studentGrade
     # add method to view a subject's marks (miniProjectMark, finalProjectMark, attendance mark, exersicesDiscussionMark)
 
 
@@ -38,4 +45,7 @@ class Staff(User):
 
 
 s = Student("Aminah", 642437001, '09878867', "A+", "ugh@ftu.ac.th", "DS")
+# create an object of exersicesDiscussionMark class
+discussMark = exersicesDiscussionMark("Theory class", 20)
+discussMark.show_details()
 #s.show_details() #this is the second call for show_detail() method

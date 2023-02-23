@@ -30,7 +30,7 @@ class Student(User):          #create a class called student and inherit propert
         if studentmark in self.marks:
             print(f"{self.name}'s marks for {studentmark}: {self.marks[studentmark]}")
         else:
-            print(f"{self.name} has not received any marks for {studentmark} yet.")
+            print(f"{self.name} has not received a  ny marks for {studentmark} yet.")
         
         User.show_details(self) #this is the first call for show_detail() method
         print(f"{self.name} got {self.marks}") #this print studentName got studentGrade

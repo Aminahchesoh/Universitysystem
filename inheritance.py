@@ -55,8 +55,9 @@ class Staff(User):
         self.building= building
         self.salary= salary
         User.__init__(self, name, id, phonenum)
+         
 #create course class to link it with Students & Lecturer classes using composition later
-class Course:
+class Course:     
     def __init__(self, cName, cId, cMidterm, cMiniProject, cFinalProject, cFinalExam, cDiscussion):
         self.name = cName
         self.id = cId
